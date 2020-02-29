@@ -5,6 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+ * Created by jt on 5/18/17.
+ */
 @Controller
 public class BookController {
 
@@ -15,11 +18,10 @@ public class BookController {
     }
 
     @RequestMapping("/books")
-    public String getBooks(Model model) {
+    public String getBooks(Model model){
 
         model.addAttribute("books", bookRepository.findAll());
 
         return "books";
     }
-
 }
